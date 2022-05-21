@@ -1,25 +1,31 @@
-
 let saveBtn = $(".saveBtn");
 let textArea = $(".description");
-let hour = $(".hour");
 let colorBlock = $(".time-block")
 let currentTime = moment().hour();
-let currentDay = moment().format('dddd, MMM Do YYYY');
+let currentDay = moment().format('MMMM Do YYYY, h:mm:ss a');
 
 $("#currentDay").html(currentDay);
 
 
-function handlePlanner () {
+function handleSave () {
 
     saveBtn.on("click", function () {
         let input = $(this).siblings("textArea").val();
-        let time = $(this).parent().attr("id");
+        let time =  $(this).siblings(".hour").text();
     
-        localStorage.setItem(input, time)
+        
+    if (input === "") {
+        localStorage.setItem(time, "");
+    }
+    else {
+        localStorage.setItem(time, input);
+    }
     });
-    
+}  
 
-    colorBlock.each(function(){
+function handleBlocks() {
+
+    colorBlock.each(function (){
     let presentHour = parseInt($(this).attr("id"));
    
 
@@ -35,22 +41,22 @@ function handlePlanner () {
              $(this).addClass("past");          
            }
 
-           $("#9am textArea").val(localStorage.getItem("9am"));
-           $("#10am textArea").val(localStorage.getItem("10am"));
-           $("#11am textArea").val(localStorage.getItem("11am"));
+});
+           $("#9am textArea").val(localStorage.getItem("9AM"));
+           $("#10am textArea").val(localStorage.getItem("10AM"));
+           $("#11am textArea").val(localStorage.getItem("11AM"));
            $("#12pm textArea").val(localStorage.getItem("12pm"));
            $("#1pm textArea").val(localStorage.getItem("1pm"));
            $("#2pm textArea").val(localStorage.getItem("2pm"));
            $("#3pm textArea").val(localStorage.getItem("3pm"));
            $("#4pm textArea").val(localStorage.getItem("4pm"));
            $("#5pm textArea").val(localStorage.getItem("5pm"));
-});
+   
+ 
+};
 
-
-}
-
-
-handlePlanner()
+handleSave()
+handleBlocks()
 
 
 
