@@ -12,3 +12,5 @@ Future: green
 When the user enters text in the center field and press the save button, the task perssits upon page refresh. 
 
 All times and text are saved in local storage when save button is clicked. 
+
+![image](https://user-images.githubusercontent.com/103149149/169709945-de601260-5f0b-436c-aac3-84340df1c3d0.png)
