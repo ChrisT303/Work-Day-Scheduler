@@ -25,9 +25,9 @@ function handleSave () {
 
 function handleBlocks() {
 
-    colorBlock.each(function (){
+colorBlock.each(function (){
     let presentHour = parseInt($(this).attr("id"));
-   
+    
 
          if ( presentHour > currentTime) {
              $(this).addClass("future");
@@ -42,15 +42,15 @@ function handleBlocks() {
            }
 
 });
-           $("#9am textArea").val(localStorage.getItem("9AM"));
-           $("#10am textArea").val(localStorage.getItem("10AM"));
-           $("#11am textArea").val(localStorage.getItem("11AM"));
-           $("#12pm textArea").val(localStorage.getItem("12pm"));
-           $("#1pm textArea").val(localStorage.getItem("1pm"));
-           $("#2pm textArea").val(localStorage.getItem("2pm"));
-           $("#3pm textArea").val(localStorage.getItem("3pm"));
-           $("#4pm textArea").val(localStorage.getItem("4pm"));
-           $("#5pm textArea").val(localStorage.getItem("5pm"));
+           $("#9 textArea").val(localStorage.getItem("9AM"));
+           $("#10 textArea").val(localStorage.getItem("10AM"));
+           $("#11 textArea").val(localStorage.getItem("11AM"));
+           $("#12 textArea").val(localStorage.getItem("12pm"));
+           $("#13 textArea").val(localStorage.getItem("1pm"));
+           $("#14 textArea").val(localStorage.getItem("2pm"));
+           $("#15 textArea").val(localStorage.getItem("3pm"));
+           $("#16 textArea").val(localStorage.getItem("4pm"));
+           $("#17 textArea").val(localStorage.getItem("5pm"));
    
  
 };
